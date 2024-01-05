@@ -22,13 +22,12 @@ conda activate react
 cd /home_data/home/v-lijm/projects/react    ##工作目录
 ## 离线任务
 ## python train.py --batch-size 16 --gpu-ids 0 -lr 0.00001 --kl-p 0.00001 -e 50 -j 8 --outdir results/train_offline
-## 有线任务
-## python train.py --batch-size 4  --gpu-ids 0  -lr 0.00001  --kl-p 0.00001 -e 50  -j 8 --online  --window-size 16 --outdir results/train_online
+## 在线任务
+python train.py --batch-size 4  --gpu-ids 0  -lr 0.00001  --kl-p 0.00001 -e 50  -j 8 --online  --window-size 16 --outdir results/train_online
 
 ## 离线任务评估
 ## python evaluate.py  --resume results/train_offline/best_checkpoint.pth  --gpu-ids 0  -b 4  -j 4  --outdir results/val_offline --split val
-python evaluate.py  --resume results/TransVAE/offline/offline_TransVAE.pth  --gpu-ids 0  -b 4  -j 4  --outdir results/val_offline --split val
-## 有线任务评估
+## 在线任务评估
 ## python evaluate.py  --resume ./results/train_online/best_checkpoint.pth  --gpu-ids 0 -b 4  -j 4  --online --outdir results/val_online --split val
 echo end on $(date)
 
