@@ -1,0 +1,7 @@
+/__pycache__
+*.pyc
+/pytorch3d
+*.pth
+*.npy
+test.csv
+/results

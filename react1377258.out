@@ -1,0 +1,5 @@
+bme_gpu21
+start on Fri Jan 5 11:18:17 CST 2024
+Resume from results/TransVAE/offline/offline_TransVAE.pth
+-----------------Repeat 9 times-----------------
+-----------------Evaluating Metric-----------------
