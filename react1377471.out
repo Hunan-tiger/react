@@ -1,0 +1,30 @@
+bme_gpu13
+start on Fri Jan 5 17:18:28 CST 2024
+Epoch:  1   train_loss: 1.79070   train_rec_loss: 1.60766  train_kld_loss: 1.89460 train_div_loss: 0.01830
+Epoch:  2   train_loss: 1.05485   train_rec_loss: 0.93030  train_kld_loss: 2.50882 train_div_loss: 0.01245
+Epoch:  3   train_loss: 0.90712   train_rec_loss: 0.83503  train_kld_loss: 1.97484 train_div_loss: 0.00721
+Epoch:  4   train_loss: 0.82283   train_rec_loss: 0.80669  train_kld_loss: 1.42664 train_div_loss: 0.00161
+Epoch:  5   train_loss: 0.78410   train_rec_loss: 0.77930  train_kld_loss: 1.03583 train_div_loss: 0.00048
+Epoch:  6   train_loss: 0.77187   train_rec_loss: 0.76921  train_kld_loss: 0.93591 train_div_loss: 0.00027
+Epoch:  7   train_loss: 0.70750   train_rec_loss: 0.70327  train_kld_loss: 0.90926 train_div_loss: 0.00042
+Epoch:  8   train_loss: 0.73254   train_rec_loss: 0.70774  train_kld_loss: 0.90241 train_div_loss: 0.00248
+Epoch:  9   train_loss: 0.69827   train_rec_loss: 0.65942  train_kld_loss: 0.90372 train_div_loss: 0.00388
+Epoch:  10   train_loss: 0.71613   train_rec_loss: 0.70505  train_kld_loss: 0.90862 train_div_loss: 0.00111
+Epoch:  10   val_loss: 0.76836   val_rec_loss: 0.76835  val_kld_loss: 0.91301 
+Epoch:  11   train_loss: 0.73591   train_rec_loss: 0.73152  train_kld_loss: 0.91576 train_div_loss: 0.00044
+Epoch:  12   train_loss: 0.70622   train_rec_loss: 0.69659  train_kld_loss: 0.92434 train_div_loss: 0.00096
+Epoch:  13   train_loss: 0.74341   train_rec_loss: 0.71953  train_kld_loss: 0.93387 train_div_loss: 0.00239
+Epoch:  14   train_loss: 0.74187   train_rec_loss: 0.71771  train_kld_loss: 0.94356 train_div_loss: 0.00241
+Epoch:  15   train_loss: 0.82416   train_rec_loss: 0.80617  train_kld_loss: 0.95362 train_div_loss: 0.00180
+Epoch:  16   train_loss: 0.79764   train_rec_loss: 0.77553  train_kld_loss: 0.96372 train_div_loss: 0.00221
+Epoch:  17   train_loss: 0.78030   train_rec_loss: 0.75570  train_kld_loss: 0.97406 train_div_loss: 0.00246
+Epoch:  18   train_loss: 0.75778   train_rec_loss: 0.73496  train_kld_loss: 0.98427 train_div_loss: 0.00228
+Epoch:  19   train_loss: 0.76927   train_rec_loss: 0.74490  train_kld_loss: 0.99538 train_div_loss: 0.00244
+Epoch:  20   train_loss: 0.72058   train_rec_loss: 0.69824  train_kld_loss: 1.00703 train_div_loss: 0.00223
+Epoch:  20   val_loss: 0.73518   val_rec_loss: 0.73517  val_kld_loss: 1.01623 
+Epoch:  21   train_loss: 0.74375   train_rec_loss: 0.71335  train_kld_loss: 1.02219 train_div_loss: 0.00304
+Epoch:  22   train_loss: 0.75863   train_rec_loss: 0.72931  train_kld_loss: 1.03556 train_div_loss: 0.00293
+Epoch:  23   train_loss: 0.75659   train_rec_loss: 0.73437  train_kld_loss: 1.05096 train_div_loss: 0.00222
+Epoch:  24   train_loss: 0.75136   train_rec_loss: 0.73644  train_kld_loss: 1.06562 train_div_loss: 0.00149
+Epoch:  25   train_loss: 0.78111   train_rec_loss: 0.76914  train_kld_loss: 1.08144 train_div_loss: 0.00120
+Epoch:  26   train_loss: 0.73363   train_rec_loss: 0.71128  train_kld_loss: 1.09764 train_div_loss: 0.00223

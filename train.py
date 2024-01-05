@@ -67,8 +67,8 @@ def train(args, model, train_loader, optimizer, criterion):
         # [B(4), clip_length(256), C, (H, W)]
 
         listener_3dmm_out, listener_emotion_out, distribution = model(speaker_video_clip, speaker_audio_clip)
-        # listener_3dmm_out: torch.Size([4, 256, 58])  listener_emotion_out: torch.Size([4, 256, 25])
-        # distribution: [Normal(loc: torch.Size([4, 128]), scale: torch.Size([4, 128]))]
+        # listener_3dmm_out: torch.Size([B, 256, 58])  listener_emotion_out: torch.Size([B, 256, 25])
+        # distribution: [Normal(loc: torch.Size([B, 128]), scale: torch.Size([B, 128]))]
 
         loss, rec_loss, kld_loss = criterion(listener_emotion, listener_3dmm, listener_emotion_out, listener_3dmm_out,
                                              distribution)

@@ -81,7 +81,7 @@ class PositionalEncoding(nn.Module):
 
 def lengths_to_mask(lengths, device):
     lengths = torch.tensor(lengths, device=device)
-    max_len = max(lengths)
+    max_len = max(lengths) # 255
     mask = torch.arange(max_len, device=device).expand(len(lengths), max_len) < lengths.unsqueeze(1)
     return mask
 
