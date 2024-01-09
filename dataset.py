@@ -219,7 +219,7 @@ class ReactionDataset(data.Dataset):
             #     clip.append(img.unsqueeze(0))  ## 最高维生一维   [224, 224] -> [1,224,224]
             # speaker_video_clip = torch.cat(clip, dim=0) ## [256, 224, 224]
             video = np.load(speaker_video_path)  ## 加载npy文件, [751, 3, 224, 224]
-            speaker_video_clip = video[cp: cp + self._clip_length, :, :]
+            speaker_video_clip = video[cp: cp + self._clip_length, :, :, :]
 
         # listener video clip only needed for val/test
         listener_video_clip = 0
@@ -231,7 +231,7 @@ class ReactionDataset(data.Dataset):
             #     clip.append(img.unsqueeze(0))
             # listener_video_clip = torch.cat(clip, dim=0)
             video = np.load(listener_video_path)  ## 加载npy文件
-            listener_video_clip = video[cp: cp + self._clip_length, :, :]
+            listener_video_clip = video[cp: cp + self._clip_length, :, :, :]
 
         # ========================= Load Listener Reference ==========================
         listener_reference = 0

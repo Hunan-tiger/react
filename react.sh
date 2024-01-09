@@ -22,16 +22,15 @@ conda activate react
 cd /home_data/home/v-lijm/projects/react    ##工作目录
 ## 离线任务
 ## python train.py --batch-size 4 --gpu-ids 0 -lr 0.00001 --kl-p 0.00001 -e 50 -j 12 --outdir results/train_offline
-## 在线任务
-## python train.py --batch-size 4  --gpu-ids 0  -lr 0.00001  --kl-p 0.00001 -e 50  -j 8 --online  --window-size 16 --outdir results/train_online
+## 有线任务
+## python train.py --batch-size 4  --gpu-ids 0  -lr 0.00001  --kl-p 0.00001 -e 50  -j 12 --online  --window-size 16 --outdir results/train_online
 
 ## 离线任务评估
-## python evaluate.py  --resume results/train_offline/best_checkpoint.pth  --gpu-ids 0  --outdir results/val_offline --split val
-## 在线任务评估
-## python evaluate.py  --resume ./results/train_online/best_checkpoint.pth  --gpu-ids 0  --online --outdir results/val_online --split val
-
-## 计算FRRea
-python -m pytorch_fid  ./results/val_offline/val/fid/real  ./results/val_offline/val/fid/fake
+## python evaluate.py  --resume results/train_offline/best_checkpoint.pth  --gpu-ids 0  -b 4  -j 4  --outdir results/val_offline --split val
+## python evaluate.py  --resume results/TransVAE/offline/offline_TransVAE.pth  --gpu-ids 0  -b 4  -j 4  --outdir results/val_offline --split val
+## 有线任务评估
+python evaluate.py  --resume ./results/TransVAE/online/online_TransVAE.pth  --gpu-ids 0 -b 4  -j 4  --online --outdir results/val_online --split val
+python -m pytorch_fid  ./results/val_online/val/fid/real  ./results/val_online/val/fid/fake
 
 echo end on $(date)
 
@@ -52,3 +51,5 @@ echo end on $(date)
 ## 调试
 ## salloc -N 1 -n 2 -t 3:00:00 -p bme_quick --gres=gpu:1 --mem 128G
 ## 记得用完要取消作业！！！
+
+

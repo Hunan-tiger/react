@@ -73,8 +73,6 @@ class VAEModel(nn.Module): ## Transformer Encoder
 
         aug_mask = torch.cat((token_mask, mask), 1) ## augmentation  (B, 2+seq_len),True
 
-        # 实际写代码时使用batch进行训练，所以要将所有token序列pad到相同的长度。
-        # attention mask的作用就是，在计算注意力分数的时候，告诉模型哪些token是pad的，不应该分配注意力分数
         x = self.seqTransEncoder(x, src_key_padding_mask=~aug_mask)  # 在需要被忽略的地方为True，需要保留原值的地方为False
         # x: torch.Size([258, B, 128])
         mu = x[0]  # mu_token [B, 128]
