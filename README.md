@@ -1,5 +1,5 @@
 # 关于REACT2024
-**首先，挑战赛官网如下：https://sites.google.com/cam.ac.uk/react2024/home**
+**首先，挑战赛官网如下：[REACT2024](https://sites.google.com/cam.ac.uk/react2024/home)**
 这个挑战赛的任务是：建立一个机器学习模型，在双人交互的背景下，通过说话者的视频、音频、表情等数据，生成听者的面部反应并要保证反应的合理性(FRDist and FRCorr)、多样性(FRVar, FRDiv, and FRDvs)、同步性(FRSyn)、真实性(FRRea)。
 
 ------------
@@ -96,5 +96,8 @@ online和offline评估过程基本一致。
 - 然后继续跑9次并将结果与第一次合并得到[B, 10, 750, 58/25]的listener_reaction_3dmm和listener_reaction_emotion，这两者参与后续的metric计算
 
 以下是两个子任务的官方pth可视化结果：
-[Online](https://github.com/Hunan-tiger/react/blob/18db9df9cfebbae5a772893007aa91bab7ba6743/results_video/online.mp4 "Online")
-[Offline](https://github.com/Hunan-tiger/react/blob/18db9df9cfebbae5a772893007aa91bab7ba6743/results_video/offline.mp4 "Offline")
+Online
+https://github.com/Hunan-tiger/react/assets/72786327/0619d6bb-80d0-49a5-9efd-86421a86c718
+
+Offline
+https://github.com/Hunan-tiger/react/assets/72786327/0431fb6f-9556-4f0e-b45a-64a5895015a9
