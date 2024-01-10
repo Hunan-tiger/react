@@ -71,6 +71,7 @@ def val(args, model, val_loader, criterion, render, binarize=False):
             if len(speaker_video_clip.shape) != 1: # if loaded
                 speaker_video_clip, speaker_audio_clip = speaker_video_clip[:,:750].cuda(), speaker_audio_clip[:,:750].cuda()
             speaker_emotion, listener_emotion, listener_3dmm, listener_references = speaker_emotion[:,:750].cuda(), listener_emotion[:,:750].cuda(), listener_3dmm[:,:750].cuda(), listener_references[:,:750].cuda()
+            
         with torch.no_grad():
             prediction = model(speaker_video=speaker_video_clip, speaker_audio=speaker_audio_clip, speaker_emotion=speaker_emotion, listener_emotion=listener_emotion)
             if isinstance(prediction, tuple): # Trans VAE
@@ -105,7 +106,7 @@ def val(args, model, val_loader, criterion, render, binarize=False):
     all_listener_emotion_pred_list.append(listener_emotion_pred.unsqueeze(1))
 
     print("-----------------Repeat 9 times-----------------")
-    for i in range(9):
+    for i in range(tqdm(9)):
         listener_emotion_pred_list = []
         for batch_idx, (
         speaker_video_clip, speaker_audio_clip, speaker_emotion, _, _, _, listener_emotion, _, _) in enumerate(tqdm(val_loader)):

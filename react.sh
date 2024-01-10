@@ -27,7 +27,7 @@ cd /home_data/home/v-lijm/projects/react    ##工作目录
 
 ## 离线任务评估
 ## python evaluate.py  --resume results/train_offline/best_checkpoint.pth  --gpu-ids 0  -b 4  -j 4  --outdir results/val_offline --split val
-## python evaluate.py  --resume results/TransVAE/offline/offline_TransVAE.pth  --gpu-ids 0  -b 4  -j 4  --outdir results/val_offline --split val
+## python evaluate.py  --resume results/train_online/best_checkpoint.pth  --gpu-ids 0  -b 4  -j 4  --outdir results/val_offline --split val
 ## 有线任务评估
 python evaluate.py  --resume ./results/TransVAE/online/online_TransVAE.pth  --gpu-ids 0 -b 4  -j 4  --online --outdir results/val_online --split val
 python -m pytorch_fid  ./results/val_online/val/fid/real  ./results/val_online/val/fid/fake
@@ -49,7 +49,7 @@ echo end on $(date)
 
 
 ## 调试
-## salloc -N 1 -n 2 -t 3:00:00 -p bme_quick --gres=gpu:1 --mem 128G
+## salloc -p bme_gpu -N 1 -n 2 -t 1:00:00 --gres=gpu:1 --mem=128G
 ## 记得用完要取消作业！！！
 
 
