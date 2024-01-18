@@ -7,7 +7,7 @@
 #SBATCH -p bme_gpu  ##指定作业分区，可以选bme_gpu bme_cpu bme_quick bme_cpu_small
 #SBATCH -t 60:00:00   ##最长运行时间 (2-12:00:00)
 #SBATCH -N 1    ##作业申请的节点数
-#SBATCH --gres=gpu:NVIDIAA10080GBPCIe:1  ##申请gpu型号和数目，也可以--gres=gpu:NVIDIAA10080GBPCIe:1来指定GPU型号，申请CPU分区时要注释掉
+#SBATCH --gres=gpu:1  ##申请gpu型号和数目，也可以--gres=gpu:NVIDIAA10080GBPCIe:1来指定GPU型号，申请CPU分区时要注释掉
 #SBATCH --mem=128G  ##预留内存，最多128G
 #SBATCH -n 8    ##CPU数量，最多为8,一个cpu有20个core
 
@@ -21,7 +21,7 @@ conda activate react
 
 cd /home_data/home/v-lijm/projects/react    ##工作目录
 ## 离线任务
-## python train.py --batch-size 4 --gpu-ids 0 -lr 0.00001 --kl-p 0.00001 -e 50 -j 12 --outdir results/train_offline
+python train.py --batch-size 4 --gpu-ids 0 -lr 0.00001 --kl-p 0.00001 -e 50 -j 12 --outdir results/train_offline
 ## 有线任务
 ## python train.py --batch-size 4  --gpu-ids 0  -lr 0.00001  --kl-p 0.00001 -e 50  -j 12 --online  --window-size 16 --outdir results/train_online
 
@@ -29,8 +29,8 @@ cd /home_data/home/v-lijm/projects/react    ##工作目录
 ## python evaluate.py  --resume results/train_offline/best_checkpoint.pth  --gpu-ids 0  -b 4  -j 4  --outdir results/val_offline --split val
 ## python evaluate.py  --resume results/train_online/best_checkpoint.pth  --gpu-ids 0  -b 4  -j 4  --outdir results/val_offline --split val
 ## 有线任务评估
-python evaluate.py  --resume ./results/TransVAE/online/online_TransVAE.pth  --gpu-ids 0 -b 4  -j 4  --online --outdir results/val_online --split val
-python -m pytorch_fid  ./results/val_online/val/fid/real  ./results/val_online/val/fid/fake
+## python evaluate.py  --resume ./results/TransVAE/online/online_TransVAE.pth  --gpu-ids 0 -b 4  -j 4  --online --outdir results/val_online --split val
+## python -m pytorch_fid  ./results/val_online/val/fid/real  ./results/val_online/val/fid/fake
 
 echo end on $(date)
 

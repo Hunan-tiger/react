@@ -1,12 +1,12 @@
 # 关于REACT2024
-**首先，挑战赛官网如下：[REACT2024](https://sites.google.com/cam.ac.uk/react2024/home)**
+**首先，挑战赛官网如下：[REACT2024](https://sites.google.com/cam.ac.uk/react2024/home)**  
 这个挑战赛的任务是：建立一个机器学习模型，在双人交互的背景下，通过说话者的视频、音频、表情等数据，生成听者的面部反应并要保证反应的合理性(FRDist and FRCorr)、多样性(FRVar, FRDiv, and FRDvs)、同步性(FRSyn)、真实性(FRRea)。
 
 ------------
 
 ## DATASET
-- **NoXI**: NOvice eXpert Interaction dataset]
-- **RECOLA**: REmote COLlaborative and Affective dataset
+- **NoXI**: NOvice eXpert Interaction dataset
+- **RECOLA**: REmote COLlaborative and Affective dataset  
 这两个数据集都是需要找官方并签协议书的，然后官方会发送将两数据集混合筛选好的数据集。（缺点是OneDrive下载数据集会丢失文件）
 
 数据集主要分为以下四部分：
@@ -93,11 +93,16 @@
 ## Evaluate
 online和offline评估过程基本一致。
 - 首先会将完整的speaker_video和speaker_audio跑一次得到listener_reaction_3dmm、listener_reaction_emotion、dist并根据3dmm可视化预测listener的2d图片和3d视频
-- 然后继续跑9次并将结果与第一次合并得到[B, 10, 750, 58/25]的listener_reaction_3dmm和listener_reaction_emotion，这两者参与后续的metric计算
+- 然后继续跑9次并将结果与第一次合并得到[B, 10, 750, 58/25]的listener_reaction_3dmm和listener_reaction_emotion，这两者参与后续的metric计算  
 
-以下是两个子任务的官方pth可视化结果：
+以下是两个子任务的官方pth可视化结果：  
 Online
-https://github.com/Hunan-tiger/react/assets/72786327/0619d6bb-80d0-49a5-9efd-86421a86c718
+
+
+https://github.com/Hunan-tiger/react/assets/72786327/d667cc4b-cf39-4be4-b475-e469632d7728
+
 
 Offline
-https://github.com/Hunan-tiger/react/assets/72786327/0431fb6f-9556-4f0e-b45a-64a5895015a9
+
+
+https://github.com/Hunan-tiger/react/assets/72786327/aae72f99-f02b-4b0d-9461-2605f2e1c84a
