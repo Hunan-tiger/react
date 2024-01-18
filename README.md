@@ -95,14 +95,6 @@ online和offline评估过程基本一致。
 - 首先会将完整的speaker_video和speaker_audio跑一次得到listener_reaction_3dmm、listener_reaction_emotion、dist并根据3dmm可视化预测listener的2d图片和3d视频
 - 然后继续跑9次并将结果与第一次合并得到[B, 10, 750, 58/25]的listener_reaction_3dmm和listener_reaction_emotion，这两者参与后续的metric计算  
 
-以下是两个子任务的官方pth可视化结果：  
-Online
-
-
-https://github.com/Hunan-tiger/react/assets/72786327/d667cc4b-cf39-4be4-b475-e469632d7728
-
-
-Offline
-
-
-https://github.com/Hunan-tiger/react/assets/72786327/aae72f99-f02b-4b0d-9461-2605f2e1c84a
+以下是两个子任务的官方pth可视化结果：
+[Online](https://github.com/Hunan-tiger/react/blob/18db9df9cfebbae5a772893007aa91bab7ba6743/results_video/online.mp4 "Online")
+[Offline](https://github.com/Hunan-tiger/react/blob/18db9df9cfebbae5a772893007aa91bab7ba6743/results_video/offline.mp4 "Offline")
